@@ -1,0 +1,67 @@
+{
+  "gameConfig": {
+    "rows": 3,
+    "columns": 5,
+    "bet": 1,
+    "balance": 1000
+  },
+  "symbols": [
+    { "id": "A", "type": "regular", "payout": { "3": 5, "4": 10, "5": 20 } },
+    { "id": "B", "type": "regular", "payout": { "3": 4, "4": 8, "5": 16 } },
+    { "id": "C", "type": "regular", "payout": { "3": 3, "4": 6, "5": 12 } },
+    { "id": "D", "type": "regular", "payout": { "3": 2, "4": 4, "5": 8 } },
+    { "id": "WILD", "type": "wild" },
+    { "id": "SCATTER", "type": "scatter" }
+  ],
+  "paylines": [
+    { "id": 1, "positions": [[0,1],[1,1],[2,1],[3,1],[4,1]] },
+    { "id": 2, "positions": [[0,0],[1,0],[2,0],[3,0],[4,0]] },
+    { "id": 3, "positions": [[0,2],[1,2],[2,2],[3,2],[4,2]] }
+  ],
+  "spins": [
+    {
+      "id": 1,
+      "matrix": [
+        ["A","B","C","D","A"],
+        ["A","A","A","A","A"],
+        ["C","D","B","C","D"]
+      ],
+      "win": {
+        "amount": 20,
+        "lines": [
+          {
+            "payline": 1,
+            "symbol": "A",
+            "count": 5,
+            "positions": [[0,1],[1,1],[2,1],[3,1],[4,1]]
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "matrix": [
+        ["B","C","D","A","B"],
+        ["D","A","C","B","D"],
+        ["C","D","A","C","B"]
+      ],
+      "win": {
+        "amount": 0,
+        "lines": []
+      }
+    },
+    {
+      "id": 3,
+      "matrix": [
+        ["SCATTER","B","C","SCATTER","D"],
+        ["A","SCATTER","B","C","D"],
+        ["C","D","A","B","SCATTER"]
+      ],
+      "win": {
+        "amount": 10,
+        "scatterCount": 4,
+        "bonusTriggered": true
+      }
+    }
+  ]
+}
